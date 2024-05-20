@@ -127,6 +127,10 @@ main p {
 
 /* Banner */
 
+.seccionBanner{
+  padding: 2rem 0;
+}
+
 .sliderBannerDesktop {
   display: none !important;
 }
@@ -314,7 +318,6 @@ main p {
   }
 
   .heroNotasPrensa {
-    width: 100%;
     background: none;
     padding: 1rem;
   }
@@ -415,8 +418,16 @@ main p {
     font-size: 1.4rem;
   }
 
+  .heroNotasPrensa div {
+    padding: 5rem 2.75rem;
+  }
+
   .tituloNotas {
     font-size: 2.25rem;
+  }
+
+  .heroNotasPrensa div p{
+    width: 55%;
   }
 
   .nota {
@@ -433,6 +444,10 @@ main p {
     font-size: 1.45rem;
   }
 
+  .heroNotasPrensa div {
+    padding: 6rem 2.75rem;
+  }
+
   .tituloNotas {
     font-size: 2.5rem;
   }
@@ -447,6 +462,14 @@ main p {
     font-size: 1.5rem;
   }
 
+  .heroNotasPrensa div {
+    padding: 7rem 2.75rem;
+  }
+
+  .heroNotasPrensa div p{
+    width: 45%;
+  }
+
   .tituloNotas {
     font-size: 2.7rem;
   }
@@ -459,6 +482,12 @@ main p {
 
   main p {
     font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1800px){
+  .heroNotasPrensa div {
+    padding: 8rem 2.75rem;
   }
 }
 
@@ -481,6 +510,6 @@ main p {
 
   .bannerDesktop {
     width: 1700px;
-    height: 485px;
+    height: 300px;
   }
 }
