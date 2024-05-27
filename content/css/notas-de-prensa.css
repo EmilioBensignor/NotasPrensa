@@ -1,9 +1,9 @@
 body {
   --hero-prensa: url("/content/img/notasPrensa/heroPrensa.png");
   --banner-1: url("/content/img/guiasywebinars/ofertasMobile.webp");
-  --baner-2: url("/content/img/guiasywebinars/ventajasMobile.webp");
-  --baner-desktop-1: url("/content/img/guiasywebinars/ofertasDesktop.webp");
-  --baner-desktop-2: url("/content/img/guiasywebinars/ventajasDesktop.webp");
+  --banner-2: url("/content/img/guiasywebinars/ventajasMobile.webp");
+  --banner-desktop-1: url("/content/img/guiasywebinars/ofertasDesktop.webp");
+  --banner-desktop-2: url("/content/img/guiasywebinars/ventajasDesktop.webp");
 }
 
 
@@ -111,7 +111,7 @@ main p {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 18px 18px 0 0;
@@ -168,19 +168,19 @@ main p {
 }
 
 .banner1 {
-  background-image: url(--banner-1);
+  background-image: var(--banner-1);
 }
 
 .banner2 {
-  background-image: url(--banner-2);
+  background-image: var(--banner-2);
 }
 
 .bannerDesktop1 {
-  background-image: url(--banner-desktop-1);
+  background-image: var(--banner-desktop-1);
 }
 
 .bannerDesktop2 {
-  background-image: url(--banner-desktop-2);
+  background-image: var(--banner-desktop-2);
 }
 
 .slick-dots {
