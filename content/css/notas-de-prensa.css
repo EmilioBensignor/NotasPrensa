@@ -1,3 +1,20 @@
+body {
+  --hero-prensa: url("/content/img/notasPrensa/heroPrensa.png");
+  --banner-1: url("/content/img/guiasywebinars/ofertasMobile.webp");
+  --baner-2: url("/content/img/guiasywebinars/ventajasMobile.webp");
+  --baner-desktop-1: url("/content/img/guiasywebinars/ofertasDesktop.webp");
+  --baner-desktop-2: url("/content/img/guiasywebinars/ventajasDesktop.webp");
+}
+
+
+body[data-entorno="tourexperto.com"] {
+  --hero-prensa: url(//imagenes.tourexperto.com/content/img/notasPrensa/heroPrensa.png);
+  --banner-1: url(//imagenes.tourexperto.com/content/img/guiasywebinars/ofertasMobile.webp);
+  --banner-2: url(//imagenes.tourexperto.com/content/img/guiasywebinars/ventajasMobile.webp);
+  --banner-desktop-1: url(//imagenes.tourexperto.com/content/img/guiasywebinars/ofertasDesktop.webp);
+  --banner-desktop-2: url(//imagenes.tourexperto.com/content/img/guiasywebinars/ventajasDesktop.webp);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -148,6 +165,22 @@ main p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.banner1 {
+  background-image: url(--banner-1);
+}
+
+.banner2 {
+  background-image: url(--banner-2);
+}
+
+.bannerDesktop1 {
+  background-image: url(--banner-desktop-1);
+}
+
+.bannerDesktop2 {
+  background-image: url(--banner-desktop-2);
 }
 
 .slick-dots {
@@ -327,7 +360,7 @@ main p {
     width: 100%;
     align-items: flex-start;
     text-align: start;
-    background-image: url("/content/img/heroPrensa.png");
+    background-image: var(--hero-prensa);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

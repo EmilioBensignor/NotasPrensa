@@ -14,9 +14,9 @@
   <title>Notas</title>
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-  <!-- <link rel="stylesheet" type="text/css" href="content/css/libs/libs-reducidas.css" /> -->
+  <link rel="stylesheet" type="text/css" href="content/css/libs/libs-reducidas.css" />
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  <!-- <link rel="stylesheet" type="text/css" href="content/css/styles-basicos.css" /> -->
+  <link rel="stylesheet" type="text/css" href="content/css/styles-basicos.css" />
   <link rel="stylesheet" href="/content/css/notas-de-prensa.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
   <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css" />
 
-  <!-- <script defer type="text/javascript" src="content/js/libs/libs-reducidas.js"></script> -->
+  <script defer type="text/javascript" src="content/js/libs/libs-reducidas.js"></script>
   <script defer src="https://webchat.woztell.com/sdk.js"></script>
 </head>
 
@@ -95,22 +95,18 @@
     <section class="seccionBanner">
       <div id="sliderBanner" class="sliderBanner">
         <div class="slide slideMobile">
-          <a class="banner" style="background-image: url('/content/img/ofertasMobile.webp')"
-            href="https://tourexperto.com/cgi-bin/tesearch.pl?ofertas=1&idOrder=3&seg=4" target="_blank"></a>
+          <a class="banner banner1" href="https://tourexperto.com/cgi-bin/tesearch.pl?ofertas=1&idOrder=3&seg=4" target="_blank"></a>
         </div>
         <div class="slide slideMobile">
-          <a class="banner" style="background-image: url('/content/img/ventajasMobile.webp')"
-            href="https://tourexperto.com/ventajas.html" target="_blank"></a>
+          <a class="banner banner2" href="https://tourexperto.com/ventajas.html" target="_blank"></a>
         </div>
       </div>
       <div id="sliderBannerDesktop" class="sliderBannerDesktop">
         <div class="slide slideBannerDesktop">
-          <a class="bannerDesktop" style="background-image: url('/content/img/ofertasDesktop.webp')"
-            href="https://tourexperto.com/cgi-bin/tesearch.pl?ofertas=1&idOrder=3&seg=4" target="_blank"></a>
+          <a class="bannerDesktop bannerDesktop1" href="https://tourexperto.com/cgi-bin/tesearch.pl?ofertas=1&idOrder=3&seg=4" target="_blank"></a>
         </div>
         <div class="slide slideBannerDesktop">
-          <a class="bannerDesktop" style="background-image: url('/content/img/ventajasDesktop.webp')"
-            href="https://tourexperto.com/ventajas.html" target="_blank"></a>
+          <a class="bannerDesktop bannerDesktop2" href="https://tourexperto.com/ventajas.html" target="_blank"></a>
         </div>
       </div>
     </section>
@@ -124,64 +120,64 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script defer type="text/javascript" src="/content/js/notas-de-prensa.js"></script>
   <script>
-    //   var watcherPagina = setInterval(function () {
-    //     if (window.jQuery) {
-    //       clearInterval(watcherPagina);
+    var watcherPagina = setInterval(function () {
+      if (window.jQuery) {
+        clearInterval(watcherPagina);
 
-    //       window.onload = function () {
-    //         onloadHeader();
+        window.onload = function () {
+          onloadHeader();
 
-    //         $(window).resize(function () {
-    //           resizeHeader();
-    //         })
+          $(window).resize(function () {
+            resizeHeader();
+          })
 
-    //         $('a.contacto-wapp').click(function (e) {
-    //           e.preventDefault();
-    //           if (screen.width < 520) {
-    //             window.open($('a.contacto-wapp').attr('href'), 'view_phone', "width=1,height=1");
-    //           } else {
-    //             window.open($('a.contacto-wapp').attr('href'), 'view_phone', "width=500,height=500");
-    //           }
-    //         });
-    //       }   //fin window.onload
+          $('a.contacto-wapp').click(function (e) {
+            e.preventDefault();
+            if (screen.width < 520) {
+              window.open($('a.contacto-wapp').attr('href'), 'view_phone', "width=1,height=1");
+            } else {
+              window.open($('a.contacto-wapp').attr('href'), 'view_phone', "width=500,height=500");
+            }
+          });
+        }   //fin window.onload
 
-    //     }
-    //   }); //fin watcher jquery
+      }
+    }); //fin watcher jquery
 
-    //   var filas = 1; // como empieza llamando a verMas, ya de prepo le suma 1 y quedan 2
-    //   var cuantosporfila;
+    var filas = 1; // como empieza llamando a verMas, ya de prepo le suma 1 y quedan 2
+    var cuantosporfila;
 
-    //   if ($(window).width() <= 1080) {
-    //     cuantosporfila = 2;
-    //   } else {
-    //     cuantosporfila = 4;
-    //   }
+    if ($(window).width() <= 1080) {
+      cuantosporfila = 2;
+    } else {
+      cuantosporfila = 4;
+    }
 
-    //   function verMas() {
-    //     var maxguias = 0;
-    //     if (region.value == "" && pais.value == "") {
-    //       maxguias = $('.guia').length;
-    //     } else {
-    //       $('.guia').each(function (i) {
-    //         if ($(this).data('region') == region.value || $(this).data('pais') == pais.value) {
-    //           maxguias++;
-    //         }
-    //       });
-    //     }
+    function verMas() {
+      var maxguias = 0;
+      if (region.value == "" && pais.value == "") {
+        maxguias = $('.guia').length;
+      } else {
+        $('.guia').each(function (i) {
+          if ($(this).data('region') == region.value || $(this).data('pais') == pais.value) {
+            maxguias++;
+          }
+        });
+      }
 
-    //     if (filas * cuantosporfila < maxguias) {
-    //       filas = filas + 1;
-    //       if (region.value != "") {
-    //         filtraPorRegion();
-    //       } else if (pais.value != "") {
-    //         filtraPorPais();
-    //       } else {
-    //         mostrarPaginas();
-    //       }
-    //     }
-    //   }
+      if (filas * cuantosporfila < maxguias) {
+        filas = filas + 1;
+        if (region.value != "") {
+          filtraPorRegion();
+        } else if (pais.value != "") {
+          filtraPorPais();
+        } else {
+          mostrarPaginas();
+        }
+      }
+    }
 
-    //   verMas();
+    verMas();
 
   </script>
 </body>
