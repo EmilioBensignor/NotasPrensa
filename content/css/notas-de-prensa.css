@@ -32,6 +32,7 @@ main button {
 
 h2 {
   font-size: 1.25rem;
+  font-weight: bold;
 }
 
 main p {
@@ -379,7 +380,6 @@ main p {
 
   .notas {
     width: 100%;
-    justify-content: space-between;
     gap: 1.5rem;
   }
 
