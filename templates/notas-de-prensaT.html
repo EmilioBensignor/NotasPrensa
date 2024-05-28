@@ -9,7 +9,8 @@
   <meta name="HandheldFriendly" content="true">
   <meta name="robots" content="index,follow">
   <meta name="title" content="Notas de Prensa | Tour Experto - Noticias y Actualizaciones">
-  <meta name="description" content="Explora las últimas notas de prensa y noticias sobre Tour Experto. Descubre nuestras novedades, logros y eventos destacados.">
+  <meta name="description"
+    content="Explora las últimas notas de prensa y noticias sobre Tour Experto. Descubre nuestras novedades, logros y eventos destacados.">
   <title>Notas</title>
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
@@ -49,7 +50,7 @@
       <p class="tituloNotas">Últimas notas sobre nosotros</p>
       <div class="notas" id="contenedorNotas">
         <!--nota-->
-        <a href="<!--url-->" class="nota">
+        <a href="<!--url-->" class="nota" style="display:none;">
           <div class="imagenNota" style="background-image:url('/images/notas/<!--img-->')">
           </div>
           <div class="verNota">
@@ -58,12 +59,13 @@
         </a>
         <!--finnota-->
       </div>
-      <button class="btnVerMas" onclick="verMas();" style="display:<!--mostrarboton-->">Ver más</button>
+      <button class="btnVerMas" onclick="verMas();">Ver más</button>
     </section>
     <section class="seccionBanner">
       <div id="sliderBanner" class="sliderBanner">
         <div class="slide slideMobile">
-          <a class="banner banner1" href="https://tourexperto.com/cgi-bin/tesearch.pl?ofertas=1&idOrder=3&seg=4" target="_blank"></a>
+          <a class="banner banner1" href="https://tourexperto.com/cgi-bin/tesearch.pl?ofertas=1&idOrder=3&seg=4"
+            target="_blank"></a>
         </div>
         <div class="slide slideMobile">
           <a class="banner banner2" href="https://tourexperto.com/ventajas.html" target="_blank"></a>
@@ -71,7 +73,8 @@
       </div>
       <div id="sliderBannerDesktop" class="sliderBannerDesktop">
         <div class="slide slideBannerDesktop">
-          <a class="bannerDesktop bannerDesktop1" href="https://tourexperto.com/cgi-bin/tesearch.pl?ofertas=1&idOrder=3&seg=4" target="_blank"></a>
+          <a class="bannerDesktop bannerDesktop1"
+            href="https://tourexperto.com/cgi-bin/tesearch.pl?ofertas=1&idOrder=3&seg=4" target="_blank"></a>
         </div>
         <div class="slide slideBannerDesktop">
           <a class="bannerDesktop bannerDesktop2" href="https://tourexperto.com/ventajas.html" target="_blank"></a>
@@ -107,45 +110,49 @@
               window.open($('a.contacto-wapp').attr('href'), 'view_phone', "width=500,height=500");
             }
           });
+	 verMas();
+          
         }   //fin window.onload
 
       }
-    }); //fin watcher jquery
+    }, 100); //fin watcher jquery
 
-    var filas = 1; // como empieza llamando a verMas, ya de prepo le suma 1 y quedan 2
+    var filas = 0; // como empieza llamando a verMas, ya de prepo le suma 1
     var cuantosporfila;
 
     if ($(window).width() <= 1080) {
-      cuantosporfila = 2;
+      cuantosporfila = 4;
     } else {
       cuantosporfila = 4;
     }
 
     function verMas() {
-      var maxguias = 0;
-      if (region.value == "" && pais.value == "") {
-        maxguias = $('.guia').length;
-      } else {
-        $('.guia').each(function (i) {
-          if ($(this).data('region') == region.value || $(this).data('pais') == pais.value) {
-            maxguias++;
-          }
-        });
-      }
+      var maxnotas = 0;
+      $('.nota').each(function (i) {
+        maxnotas++;
+      });
 
-      if (filas * cuantosporfila < maxguias) {
+      if (filas * cuantosporfila < maxnotas) {
         filas = filas + 1;
-        if (region.value != "") {
-          filtraPorRegion();
-        } else if (pais.value != "") {
-          filtraPorPais();
-        } else {
-          mostrarPaginas();
-        }
+        mostrarPaginas();
       }
     }
 
-    verMas();
+    function mostrarPaginas() {
+      var haymas = 0;
+      $('.nota').each(function (i) {
+        if (i < filas * cuantosporfila) {
+          $(this).show();
+        } else {
+          haymas = 1;
+        }
+      });
+      if (haymas) {
+        $('.btnVerMas').show();
+      } else {
+        $('.btnVerMas').hide();
+      }
+    }
 
   </script>
 </body>
